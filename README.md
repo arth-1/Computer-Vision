@@ -1,3 +1,3 @@
 ﻿# Computer-Vision
 
-this is my ongoing project
+Computer vision repo which contains diffrent computer vision project which were usefull for learning about it including the Yolo algorithm
