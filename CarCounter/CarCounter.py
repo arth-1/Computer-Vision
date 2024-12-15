@@ -7,11 +7,11 @@ import time
 from sort import *
  
 
-cap = cv2.VideoCapture("E:/ProjectsTest/Yolo/Yolofk/CarCounter/Videos/cars.mp4")
+cap = cv2.VideoCapture("D:\Projects\Computer-Vision\CarCounter\Videos\cars.mp4")
 
  
   
-model = YOLO('E:/ProjectsTest/Yolo/Yolofk/Yolo-Weights/yolov8l.pt')
+model = YOLO('D:\Projects\Computer-Vision\Yolo-Weights\yolov8l.pt')
  
 classNames = ["person", "bicycle", "car", "motorbike", "aeroplane", "bus", "train", "truck", "boat",
               "traffic light", "fire hydrant", "stop sign", "parking meter", "bench", "bird", "cat",
@@ -24,7 +24,7 @@ classNames = ["person", "bicycle", "car", "motorbike", "aeroplane", "bus", "trai
               "microwave", "oven", "toaster", "sink", "refrigerator", "book", "clock", "vase", "scissors",
               "teddy bear", "hair drier", "toothbrush"
               ]
-mask = cv2.imread("E:/ProjectsTest/Yolo/Yolofk/CarCounter/Videos/mask.png")
+mask = cv2.imread("D:\Projects\Computer-Vision\CarCounter\Videos\mask.png")
  
 # Tracking
 tracker = Sort(max_age=20, min_hits=3, iou_threshold=0.3)
@@ -37,7 +37,7 @@ while True:
     mask_resized = cv2.resize(mask, (img.shape[1], img.shape[0]))
     imgRegion = cv2.bitwise_and(img, mask_resized)
  
-    imgGraphics = cv2.imread("E:/ProjectsTest/Yolo/Yolofk/CarCounter/Videos/graphics.png", cv2.IMREAD_UNCHANGED)
+    imgGraphics = cv2.imread("D:\Projects\Computer-Vision\CarCounter\Videos\graphics.png", cv2.IMREAD_UNCHANGED)
     #imgGraphics = cv2.resize(imgGraphics, (img.shape[1], img.shape[0]))  # Resize to match video frame
     img = cvzone.overlayPNG(img, imgGraphics)
 
